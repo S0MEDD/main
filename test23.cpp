@@ -31,7 +31,8 @@ int main()
               cin >> name;
               dataread(name); break;
           }
-        default: {
+        
+    default: {
             vector<Person> Group;
             for (int j = 0; j < 3; j++) {
                 Person temp;
@@ -50,8 +51,11 @@ int main()
             default: sort(Group.begin(), Group.end());
             }
             for (auto& B : Group) cout <<B;
+            break;
         }
-               }
+               
+    
+    }
     
     
         system("pause");

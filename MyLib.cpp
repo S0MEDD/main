@@ -65,8 +65,8 @@ void Person::printPerson() {
 
 }
  std::ostream& operator<<(std::ostream& out, const Person& A) {
-	 cout << left << setw(15) << A.Name <<right <<setw(15) << A.Surname << " | ";
-	 for (auto& ref : A.HW) cout << setw(3) << ref;
+	 out << left << setw(15) << A.Name <<right <<setw(15) << A.Surname << " | ";
+	 for (auto& ref : A.HW) out << setw(3) << ref;
 	 out << " | " << setw(3) << A.Exam << " ; final points: "
 		 << setw(5) << setprecision(2) << fixed << A.Final << endl;
 	 return out;

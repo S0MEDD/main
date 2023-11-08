@@ -1,10 +1,10 @@
 #include "WwFiles.h"
 
 void dataread(string ReadName) {
-	std::stringstream output_beffer;
+	std::stringstream output_buffer;
 	string MyString;
 	vector<Person>Group;
-	std::stringstream open_f(ReadName);
+	std::ifstream open_f(ReadName);
 	std::getline(open_f, MyString);
 	while (open_f)
 	{
@@ -33,31 +33,31 @@ void dataread(string ReadName) {
 				Temp.setFinal(0.4 * (std::accumulate(TempV.begin(), TempV.end(), 0.0) /
 					TempV.size()) + 0.6 * Temp.getExam());
 				Group.push_back(Temp);
-				cout << Temp;
+				
 			}
 			TempV.clear();
 			Temp.setHW(TempV);
-			cout << Group.back();
+			
 		}
 		else break;
 
 	}
-	//cout << Group[0]; 
+	 
 	cout << "If You want rearange data by Names press - 1, Surnames - 2, final point -3:";
 	int selection;
 	cin.clear();
 	cin >> selection;
-	cout << selection;
+	
 
 	switch (selection) {
 	case 1: sort(Group.begin(), Group.end(), lessName); break;
 	case 2: sort(Group.begin(), Group.end(), lessSurname); break;
 	default: sort(Group.begin(), Group.end());
 	}
-	for (auto& B : Group) cout << B;
+	for (auto& B : Group)  output_buffer << B;
 	
-	/*cout << output_beffer.str();
-	*/
+	cout << output_buffer.str();
+	
 	
 }
 
